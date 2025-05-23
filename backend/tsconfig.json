@@ -112,7 +112,7 @@
      "outDir": "dist",
     "rootDir": "./"
   },
-  "include": ["**/*.ts", "express.d.ts"],
+  "include": ["src"],
   "exclude": ["node_modules"],
     "forceConsistentCasingInFileNames": true,
       "types": ["node", "express"]
