@@ -4,7 +4,7 @@ import { TypeOfTheme } from "./../../theme/themeTypes";
 const { width, height } = Dimensions.get("window");
 
 export const customStyles = (theme: TypeOfTheme,
-size: "small" | "medium" | "large",  disabled: boolean) => {
+  size: "small" | "medium" | "large", disabled: boolean) => {
   return StyleSheet.create({
     container: {
       marginBottom: 20,
@@ -19,11 +19,17 @@ size: "small" | "medium" | "large",  disabled: boolean) => {
     },
     input: {
       flex: 1,
+      marginLeft: 12
       // ...baseInputStyle,
       // ...sizeStyles[size],
     },
     icon: {
       marginHorizontal: 10,
+    },
+    label: {
+      fontSize: 14,
+      fontWeight: '900',
+      color: theme.colors.primary,
     },
     separator: {
       height: 20,
@@ -31,6 +37,12 @@ size: "small" | "medium" | "large",  disabled: boolean) => {
       backgroundColor: '#ccc',
       marginHorizontal: 4,
     },
+    rightIcon: {
+      paddingHorizontal: 8,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+
     small: {
       flex: 1,
       height: 20,

@@ -20,7 +20,11 @@ export const customStyles = (theme: TypeOfTheme) => {
       paddingHorizontal: 38,
       paddingVertical: 24,
     },
-
+    backButton: {
+      position: "absolute",
+      top: 36,
+      left: 26
+    },
     iconLeft: {},
     iconRight: {},
     logoWrapper: {
@@ -43,10 +47,15 @@ export const customStyles = (theme: TypeOfTheme) => {
     },
     inputWrapper: {
       width: 290,
+      paddingRight: 6,
       marginBottom: 2
     },
     inputBox: {
       marginBottom: 8
+    },
+    errorText: {
+      color: "red",
+      marginBottom: 12
     },
     buttonWrapper: {
       flexDirection: 'row',
@@ -79,6 +88,39 @@ export const customStyles = (theme: TypeOfTheme) => {
       color: theme.colors.primary, // Đảm bảo màu sắc đủ nổi bật trên nền
       fontSize: 16, // Kích thước font rõ ràng
       textDecorationLine: 'underline', // Tạo hiệu ứng gạch dưới cho text như một liên kết
+    },
+
+    boxCamera: {
+      alignItems: "center", // Để icon và text canh giữa theo chiều ngang
+      justifyContent: "center",
+      paddingBottom: 22,
+      marginLeft: 0, // XÓA marginLeft, vì sẽ dùng `alignSelf: "center"` hoặc để trong container căn giữa
+      alignSelf: "center", // Căn giữa toàn bộ khối camera trong parent
+    },
+    avatarImage: {
+      width: 100,
+      height: 100,
+      borderRadius: 50,
+      borderWidth: 2,
+      borderColor: "#ccc",
+      alignSelf: "center", // Quan trọng: giữ ảnh nằm giữa khối
+    },
+    iconCamera: {
+      width: 100,
+      height: 100,
+      borderRadius: 50,
+      borderWidth: 2,
+      borderColor: "#ccc",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#f0f0f0",
+    },
+
+    avatarText: {
+      marginTop: 12,
+      textAlign: "center", // Canh chữ giữa
+      alignSelf: "center", // Đảm bảo text nằm giữa View cha
+      color: theme.colors.primary,
     },
   });
 };

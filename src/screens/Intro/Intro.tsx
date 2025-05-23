@@ -5,16 +5,34 @@ import {
   View,
   Switch,
   ImageBackground,
+  Image,
 } from "react-native";
 import { customStyles } from "./Intro.style";
 import { useTheme } from "./../../context/ThemeContext";
 import { Ionicons } from "@expo/vector-icons";
+import { RootStackParamList } from "../../navigation/NavigationService";
 import ButtonMain from "../../components/Button/ButtonMain/ButtonMain";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RouteProp } from "@react-navigation/native";
 
-export default function Intro() {
+type IntroScreenProps = {
+  navigation: StackNavigationProp<RootStackParamList, "Intro">;
+  route: RouteProp<RootStackParamList, "Intro">;
+};
+
+export default function Intro({ navigation }: IntroScreenProps) {
   const { theme, toggleTheme } = useTheme();
   const [isEnableLight, setIsEnableLight] = useState<boolean>(true); // Xác định theme ban đầu
 
+  //
+  useEffect(() => {
+    // Tự động điều hướng về "Main" sau 3 giây chẳng hạn
+    setTimeout(() => {
+      navigation.replace("Main");
+    }, 700);
+  }, []);
+  //
   useEffect(() => {
     // Kiểm tra khi theme thay đổi và thiết lập trạng thái isEnableLight
     if (theme.colors.background === "#FAF0F0") {
@@ -61,17 +79,25 @@ export default function Intro() {
           />
         </View>
         {/* button next*/}
-        <View style={styles.buttonWrapper}>
+        {/* <View style={styles.buttonWrapper}>
           <ButtonMain
             size="large"
             hasIcon={true}
             iconName={"arrow-forward"}
             iconPosition={"end"}
             style={styles.button}
+            onPress={() => navigation.navigate('Main')}
           >
             Next
           </ButtonMain>
-        </View>
+        </View> */}
+        <Image
+          style={styles.logo}
+          source={{
+            uri: "https://github.com/nguyendh-xp97/VerDHN-Mobile-App-Coffee-Shop-LetDiv-ReactNative/blob/main/src/component/TransitionSuccess/b033f4c97648033801ece272d5d1f286.gif?raw=true",
+          }}
+          alt="logo"
+        />
       </View>
     </ImageBackground>
   );

@@ -6,17 +6,33 @@ import {
   ImageBackground,
   Image,
   Pressable,
+  ScrollView,
 } from "react-native";
 import { customStyles } from "./PaymentSuccess.style";
 import { useTheme } from "./../../../context/ThemeContext";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RouteProp } from "@react-navigation/native";
+import { RootStackParamList } from "../../../navigation/NavigationService";
 import { Ionicons } from "@expo/vector-icons";
 import ButtonMain from "../../../components/Button/ButtonMain/ButtonMain";
 import Input from "../../../components/Input/Input";
 
-export default function PaymentSuccess() {
+type PaymentSuccessScreenProps = {
+  navigation: StackNavigationProp<RootStackParamList, "PaymentSuccess">;
+  route: RouteProp<RootStackParamList, "PaymentSuccess">;
+};
+
+export default function PaymentSuccess({
+  navigation,
+  route,
+}: PaymentSuccessScreenProps) {
+  //
   const { theme, toggleTheme } = useTheme();
   const [isEnableLight, setIsEnableLight] = useState<boolean>(true); // Xác định theme ban đầu
-
+  //
+  // Lấy thông tin chi tiết sản phẩm từ params
+  const { infoPayment } = route.params;
+  //
   useEffect(() => {
     // Kiểm tra khi theme thay đổi và thiết lập trạng thái isEnableLight
     if (theme.colors.background === "#FAF0F0") {
@@ -36,12 +52,31 @@ export default function PaymentSuccess() {
       style={styles.background}
       resizeMode="cover"
     >
-      <View style={styles.container}>
+      <ScrollView
+        contentContainerStyle={{
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          flexGrow: 1,
+          marginHorizontal: 16,
+        }}
+      >
         {/* Title */}
-        <Text style={styles.title}>Thanh toán thành công!</Text>
+        <Text style={styles.title}>Cảm ơn bạn !</Text>
         {/* Text */}
         <Text style={styles.text}>
-          Bạn đã thanh toán thành công cho đơn hàng ID 003639
+          Bạn đã thanh toán thành công cho đơn hàng: 003639
+        </Text>
+        <Text style={styles.text}>
+          Phương thức thanh toán: {infoPayment.methodName ?? null}
+        </Text>
+        <Text style={styles.text}>
+          Khuyến mãi: {infoPayment.promoCode ?? null}
+        </Text>
+        <Text style={styles.text}>
+          Ghi chú đơn hàng: {infoPayment.note ?? null}
+        </Text>
+        <Text style={styles.text}>
+          Đơn vị vận chuyển: {infoPayment.shippingName ?? null}
         </Text>
         {/* Logo */}
         <Image
@@ -59,13 +94,13 @@ export default function PaymentSuccess() {
             iconName={"arrow-back"}
             iconPosition={"start"}
             style={styles.button}
-      
+            onPress={() => navigation.navigate("Main")}
           >
             Trang chủ
           </ButtonMain>
         </View>
         {/* Link */}
-      </View>
+      </ScrollView>
     </ImageBackground>
   );
 }

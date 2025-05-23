@@ -21,7 +21,7 @@ export const customStyles = (theme: TypeOfTheme) => {
       },
       selectedRating: {
         marginTop: 0,
-        fontSize: 16,
+        fontSize: 10,
         color: '#333',
       },
   

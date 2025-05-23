@@ -27,8 +27,10 @@ export const customStyles = (theme: TypeOfTheme) => {
       alignItems: "center", // Căn giữa logo
     },
     logo: {
-      marginBottom: -62,  // Giảm khoảng cách phía dưới của logo
+      marginBottom: -42,
+      marginTop: 6, // Giảm khoảng cách phía dưới của logo
       margin: 'auto',
+
       width: 100,
       height: 100,
       resizeMode: "contain",
@@ -39,26 +41,28 @@ export const customStyles = (theme: TypeOfTheme) => {
       textAlign: "center",
       // marginTop: 1,
       marginTop: 192,
-      paddingTop: 4  // Khoảng cách phía dưới để tránh bị che phân nữa chữ
+      paddingTop: 4,  // Khoảng cách phía dưới để tránh bị che phân nữa chữ
+      paddingBottom: 10,
+      marginHorizontal: 92
     },
     text: {
       ...(theme.typography.textMedium as TextStyle),
       color: theme.colors.primary, // Đảm bảo màu sắc đủ nổi bật trên nền
-      marginBottom: 92,
-      textAlign: "center",
+      marginBottom: 12,
+      textAlign: "justify",
+      fontWeight: "bold"
     },
     buttonWrapper: {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      paddingVertical: 98,
-      
+      marginTop: 12,
+      marginHorizontal: 82,
+      paddingVertical: 32
     },
     button: {},
     icon: {
       zIndex: 10
     },
-  
-  
   });
 };

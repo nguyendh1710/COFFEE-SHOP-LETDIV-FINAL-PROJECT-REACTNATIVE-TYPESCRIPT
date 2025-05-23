@@ -42,12 +42,12 @@ export const customStyles = (theme:TypeOfTheme) => StyleSheet.create({
   },
   
   small: {
-    width: 100, // Scale chiều rộng
-    height:20,
+    width: 120, // Scale chiều rộng
+    height:30,
     paddingLeft:24,
     paddingRight:24,
-    paddingTop:8,
-    paddingBottom:8,
+    paddingTop:4,
+    paddingBottom:2,
     borderRadius:theme.radius.radiusXl,
     backgroundColor: theme.colors.enableButton,
     paddingVertical: 14,
@@ -60,11 +60,11 @@ export const customStyles = (theme:TypeOfTheme) => StyleSheet.create({
     shadowRadius: 6, // Bóng đổ iOS
   },
   medium: {
-    width: 140,
-    height:30,
+    width: 120,
+    height:40,
     paddingLeft:24,
     paddingRight:24,
-    paddingTop:8,
+    paddingTop:4,
     paddingBottom:8,
     borderRadius:theme.radius.radiusXl,
     backgroundColor: theme.colors.enableButton,
@@ -78,7 +78,7 @@ export const customStyles = (theme:TypeOfTheme) => StyleSheet.create({
     shadowRadius: 6, // Bóng đổ iOS
   },
   large: {
-    width: 166,
+    width: 156,
     height:40,
     paddingLeft:24,
     paddingRight:24,
@@ -87,7 +87,7 @@ export const customStyles = (theme:TypeOfTheme) => StyleSheet.create({
     borderRadius:theme.radius.radiusXl,
     backgroundColor: theme.colors.enableButton,
     paddingVertical: 14,
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
 
     elevation: 4, // Bóng đổ Android
     shadowColor: '#000',

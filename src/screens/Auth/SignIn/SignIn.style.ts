@@ -20,15 +20,21 @@ export const customStyles = (theme: TypeOfTheme) => {
       paddingHorizontal: 38,
       paddingVertical: 24,
     },
-
+    backButton: {
+      position: "absolute",
+      top: 36,
+      left: 26,
+    },
     iconLeft: {},
     iconRight: {},
     logoWrapper: {
-      alignItems: "center", // Căn giữa logo
+      alignItems: "center",
+      marginTop: 10, // Căn giữa logo
     },
     logo: {
-      marginTop: 1,  // Giảm khoảng cách phía dưới của logo
-      marginLeft: 70,
+
+      paddingLeft: 8,
+
       width: 140,
       height: 140,
       resizeMode: "contain",
@@ -42,7 +48,7 @@ export const customStyles = (theme: TypeOfTheme) => {
       paddingTop: 4  // Khoảng cách phía dưới để tránh bị che phân nữa chữ
     },
     inputWrapper: {
-      width: 290,
+      width: 280,
       marginBottom: 2
     },
     input: {
@@ -55,26 +61,33 @@ export const customStyles = (theme: TypeOfTheme) => {
       gap: 4,
       marginTop: 2,
     },
-    button: {},
+    button: {
+
+    },
+    buttonWrapperSignin: {
+      marginTop: 12,
+      margin: "auto"
+    },
     icon: {
       zIndex: 10
     },
     textLinkWrapperTop: {
       flexDirection: 'row',
       gap: 10,
-      marginBottom: 6,  // Giảm khoảng cách dưới để các link text không bị ẩn
+      marginBottom: 2,  // Giảm khoảng cách dưới để các link text không bị ẩn
       paddingHorizontal: 16, // Đảm bảo có padding bên trái và bên phải
       alignItems: 'center', // Căn giữa các text link trong View
       justifyContent: 'space-between', // Đảm bảo các phần tử con sẽ căn giữa
     },
     textLinkWrapperBottom: {
-      marginTop: 20, // Thêm khoảng cách nếu cần để các link dưới không bị chồng lấp
+      marginTop: 4,
+      marginBottom: 20,
       paddingHorizontal: 16,
       alignItems: 'center',
       justifyContent: 'center',
     },
     textLink: {
-      ...(theme.typography.title as TextStyle),
+      ...(theme.typography.textMedium as TextStyle),
       color: theme.colors.primary, // Đảm bảo màu sắc đủ nổi bật trên nền
       fontSize: 16, // Kích thước font rõ ràng
       textDecorationLine: 'underline', // Tạo hiệu ứng gạch dưới cho text như một liên kết

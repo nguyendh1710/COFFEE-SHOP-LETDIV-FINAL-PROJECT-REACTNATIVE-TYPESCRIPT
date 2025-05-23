@@ -26,10 +26,10 @@ export const lightTheme: TypeOfTheme = {
     },
     subTitle: {
       fontFamily: "Inter_700Bold",
-      fontSize: 20,
+      fontSize: 16,
       lineHeight: 20,
       fontStyle: "normal",
-      fontWeight: "500",
+      fontWeight: "bold",
     },
     textMedium: {
       fontFamily: "Inter_400Regular",

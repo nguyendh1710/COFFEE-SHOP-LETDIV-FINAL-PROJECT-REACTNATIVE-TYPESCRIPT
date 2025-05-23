@@ -47,5 +47,10 @@ export const customStyles = (theme: TypeOfTheme) => {
       ...(theme.typography.title as TextStyle), // Ép kiểu tường minh
       color: theme.colors.text, // Dùng màu text từ theme
     },
+     logo:{
+    width: 100,      
+    height: 100, 
+    margin: "auto"
+  }
   });
 };

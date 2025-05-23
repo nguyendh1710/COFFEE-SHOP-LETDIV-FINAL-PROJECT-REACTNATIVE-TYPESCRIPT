@@ -1,4 +1,3 @@
-
 import { StyleSheet, TextStyle, Dimensions } from "react-native";
 import { TypeOfTheme } from "../../theme/themeTypes";
 
@@ -14,25 +13,33 @@ export const customStyles = (theme: TypeOfTheme) => {
       justifyContent: "center", // Căn giữa nội dung
       alignItems: "center",
       backgroundColor: theme.colors.background,
+
     },
     scrollViewContainer: {
       flexGrow: 1, // Đảm bảo content bên trong có thể cuộn
+
     },
     container: {
       flex: 1,
       width: "100%",
       justifyContent: "space-between", // Phân bố đều các block như input, button, text link
-    
+
 
     },
-    header:{
-     
+    backButton: {
+      position: "absolute",
+      top: 36,
+      left: 36
     },
-    headerTitle:{
-      ...theme.typography.title,
+    header: {
+
+    },
+    headerTitle: {
+      ...theme.typography.heading1,
       color: theme.colors.textBlack,
       textAlign: 'justify',
-      marginBottom: 22
+      marginBottom: 12,
+      paddingTop: 12
     },
     logo: {
       marginTop: 1,  // Giảm khoảng cách phía dưới của logo
@@ -42,19 +49,19 @@ export const customStyles = (theme: TypeOfTheme) => {
       resizeMode: "contain",
       margin: "auto"
     },
-    sectionHeader:{
-
+    sectionHeader: {
+      marginVertical: 20
     },
-    footer:{
-      padding:4,
+    footer: {
+      padding: 4,
       // backgroundColor: theme.colors.primary
     },
-    footerText:{      
+    footerText: {
       ...theme.typography.textSmall,
       color: theme.colors.primary,
       textAlign: 'center',
     },
-    footerLink:{
+    footerLink: {
       textAlign: 'center',
     },
     title: {
@@ -73,8 +80,6 @@ export const customStyles = (theme: TypeOfTheme) => {
     searchContainer: {
       marginTop: 30,
     },
-
-
     saleContainer: {
       height: 300,
       marginBottom: 20,
@@ -83,28 +88,34 @@ export const customStyles = (theme: TypeOfTheme) => {
     iconRight: {
 
     },
-    slider:{
+    slider: {
       paddingTop: 90,
       height: 30,
     },
     saleImage: {
 
-      width:  132, // full width trừ padding
+      width: 132, // full width trừ padding
       height: 100,
       borderRadius: 10
     },
-    newContainer:{
+    newContainer: {
       marginTop: 40,
     },
-    item:{
+    item: {
       flex: 1,
       margin: 8,
       maxWidth: (width - 48) / 2, // 48 = paddingHorizontal (16 * 2) + margin (8 * 2)
-    
-    },
-    gridContainer:{
 
-    }
+    },
+    gridContainer: {
+
+    },
+    productRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginBottom: 10,
+      marginHorizontal: 3
+    },
   });
 };
 

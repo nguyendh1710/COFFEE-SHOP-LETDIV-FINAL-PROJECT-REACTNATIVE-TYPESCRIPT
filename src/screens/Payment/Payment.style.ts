@@ -1,5 +1,5 @@
 import { StyleSheet, TextStyle, Dimensions } from "react-native";
-import { TypeOfTheme } from "../../../theme/themeTypes";
+import { TypeOfTheme } from "../../theme/themeTypes";
 
 // Lấy kích thước màn hình hiện tại
 const { width, height } = Dimensions.get("window");
@@ -8,76 +8,141 @@ const { width, height } = Dimensions.get("window");
 export const customStyles = (theme: TypeOfTheme) => {
   return StyleSheet.create({
     background: {
-      width: width,      // Sử dụng kích thước thực tế thay vì '100%'
-      height: height,    // Đảm bảo full screen
-      justifyContent: "center", // Căn giữa nội dung
-      alignItems: "center",
+      flex: 1,
     },
     container: {
-      flex: 1,
-      width: "100%",
-      justifyContent: "space-between", // Phân bố đều các block như input, button, text link
-      paddingHorizontal: 38,
-      paddingVertical: 24,
+      // backgroundColor: '#fff',
+      // padding: 20,
+      marginHorizontal: 16,
+      marginBottom: 20,
+      // borderRadius: 16,
+      // elevation: 4,
     },
-
-    iconLeft: {},
-    iconRight: {},
-    logoWrapper: {
-      alignItems: "center", // Căn giữa logo
+    backButton: {
+      position: "absolute",
+      top: 36,
+      left: 26
     },
-    logo: {
-      marginTop: 1,  // Giảm khoảng cách phía dưới của logo
-      marginLeft: 70,
-      width: 140,
-      height: 140,
-      resizeMode: "contain",
+    header: {
+      ...(theme.typography.heading1 as TextStyle),
+      // fontSize: 18,
+      // fontWeight: '600',
+      paddingTop: 20,
+      paddingBottom: 20,
+      marginTop: 70,
+      marginLeft: 120,
+      color: theme.colors.primary,
     },
     title: {
-      ...(theme.typography.heading1 as TextStyle),
+      fontSize: 18,
+      fontWeight: 'bold',
       color: theme.colors.primary,
-      textAlign: "center",
-      // marginTop: 1,
-      marginBottom: 2,
-      paddingTop: 4  // Khoảng cách phía dưới để tránh bị che phân nữa chữ
+      marginBottom: 20,
+      marginTop: 10,
     },
-    inputWrapper: {
-      width: 290,
-      marginBottom: 2
+    backgroundContent: {
+      flex: 1,
+    },
+    subTitle: {
+      fontSize: 16,
+      fontWeight: '500',
+      marginTop: 16,
+      marginBottom: 8,
+      color: '#555',
+    },
+    dropdown: {
+      borderColor: '#ccc',
+      borderRadius: 12,
+      marginBottom: 10,
+    },
+    dropdownContainer: {
+      borderColor: '#ccc',
+      borderRadius: 12,
+    },
+    dropdownItemContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      padding: 8,
+    },
+    dropdownItemText: {
+      marginLeft: 10,
+      fontSize: 16,
+      color: '#333',
+    },
+    bankLogo: {
+      width: 24,
+      height: 24,
+      resizeMode: 'contain',
     },
     input: {
-      marginBottom: 10
+      borderWidth: 1,
+      borderColor: '#ccc',
+      borderRadius: 10,
+      padding: 10,
+      fontSize: 16,
+      marginBottom: 10,
     },
-    buttonWrapper: {
+    totalContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      alignItems: 'center',
-      gap: 4,
-      marginTop: 2,
+      marginTop: 20,
     },
-    button: {},
-    icon: {
-      zIndex: 10
+    totalText: {
+      fontSize: 26,
+      fontWeight: '500',
     },
-    textLinkWrapperTop: {
+    amount: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      color: '#0a7',
+    },
+    button: {
+      backgroundColor: '#0a7',
+      padding: 14,
+      borderRadius: 12,
       flexDirection: 'row',
-      gap: 10,
-      marginBottom: 6,  // Giảm khoảng cách dưới để các link text không bị ẩn
-      paddingHorizontal: 16, // Đảm bảo có padding bên trái và bên phải
-      alignItems: 'center', // Căn giữa các text link trong View
-      justifyContent: 'space-between', // Đảm bảo các phần tử con sẽ căn giữa
-    },
-    textLinkWrapperBottom: {
-      marginTop: 20, // Thêm khoảng cách nếu cần để các link dưới không bị chồng lấp
-      paddingHorizontal: 16,
-      alignItems: 'center',
       justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 24,
+      marginBottom: 24,
     },
-    textLink: {
+    buttonText: {
+      color: '#fff',
+      fontSize: 17,
+      fontWeight: '600',
+      marginLeft: 8,
+    },
+    textDes: {
+     
       ...(theme.typography.title as TextStyle),
-      color: theme.colors.primary, // Đảm bảo màu sắc đủ nổi bật trên nền
+      color: "rgba(127, 147, 27, 0.85)", // Đảm bảo màu sắc đủ nổi bật trên nền
       fontSize: 16, // Kích thước font rõ ràng
-      textDecorationLine: 'underline', // Tạo hiệu ứng gạch dưới cho text như một liên kết
+         marginTop:8,
+      marginBottom:8
     },
   });
+};
+export const pickerSelectStyles = {
+  inputIOS: {
+    fontSize: 16,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    color: '#333',
+    marginBottom: 10,
+  },
+  inputAndroid: {
+    fontSize: 16,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    color: '#333',
+    marginBottom: 10,
+  },
+  iconContainer: {
+    top: 14,
+    right: 12,
+  },
 };

@@ -13,21 +13,21 @@ export const customStyles = (theme: TypeOfTheme) => {
       alignItems: "stretch",
       borderRadius: 10,
       height: 200,
-      width: 240,
+      width: 160,
       // Shadow cho iOS
       shadowColor: "#000",
       shadowOffset: {
-        width: 0,
-        height: 4,
+        width: 2,
+        height: 2,
       },
-      shadowOpacity: 0.3,
-      shadowRadius: 4.65,
+      shadowOpacity: 0.6,
+      shadowRadius: 8,
       position: "relative",
       // Shadow cho Android
-      elevation: 8,
+      elevation: 3,
     },
     imageContainer: {
-      width: 220,
+      width: 150,
       borderRadius: 10,
       aspectRatio: 1.764,
       marginBottom: 'auto'
@@ -35,7 +35,7 @@ export const customStyles = (theme: TypeOfTheme) => {
     mainImage: {
       marginTop: 14,
       marginLeft: 15,
-      width: 210,
+      width: 123,
       height: 100,
       borderRadius: theme.radius.radiusM
     },
@@ -60,10 +60,10 @@ export const customStyles = (theme: TypeOfTheme) => {
       fontWeight: "700",
     },
     productInfoContainer: {
-      width: 210,
+      width: 100,
       marginLeft: 10,
       flexDirection: "row",
-      paddingBottom: 14,
+      paddingBottom: 10,
       minHeight: 30,
       marginBottom: 50,
       paddingHorizontal: 10
@@ -73,6 +73,7 @@ export const customStyles = (theme: TypeOfTheme) => {
       flexShrink: 1,
     },
     productName: {
+      width: 60,
       ...theme.typography.textSmall,
       color: theme.colors.textBlack,
       marginRight: 10,
@@ -107,23 +108,40 @@ export const customStyles = (theme: TypeOfTheme) => {
     },
     ratingContainer: {
       position: "absolute",
-      width: 30,
-      bottom: 20,
-      left: 70
+      width: 1,
+      bottom: 36,
+      left: 73
+    },
+    iconConHeartContainer: {
+      position: "absolute",
+      width: 16,
+      bottom: 36,
+      left: 116
     },
     iconContainer: {
       flexDirection: 'row',
-      width: 40,
+      width: 20,
       position: "absolute",
       bottom: 20,
-      left: 150
+      left: 100
     },
     iconEye: {
-      color: theme.colors.primary
+      color: theme.colors.primary,
+
     },
     iconCart: {
       color: theme.colors.primary
-    }
+    },
+    buttonWrapper: {
+      position: "absolute",
+      bottom: -7,
+      left: 4,
+      right: 0,
+      alignItems: "center",
+    },
+    button: {
+
+    },
   });
 };
 
