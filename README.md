@@ -2,8 +2,8 @@
 
 Dev
 
-Frontend (React Native) start: npm start
-Backend link deploy: https://coffee-shop-letdiv-final-project.onrender.com
+- Frontend (React Native) start: npm start
+- Backend link deploy: https://coffee-shop-letdiv-final-project.onrender.com
 
 TK test Admin
 
