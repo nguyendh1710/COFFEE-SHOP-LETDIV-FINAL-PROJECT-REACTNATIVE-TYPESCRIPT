@@ -9,12 +9,8 @@ import authRoutes from "./routes/authRoutes";
 import cartRoutes from "./routes/cartRoutes";
 import path from 'path';
 import { productDB, userDB } from "./database/connection"; // import 2 kết nối DB
-import { fileURLToPath } from 'url';
 
 
-
-
-const __dirname = path.dirname(__filename);
 const app = express();
 const PORT: number = parseInt(process.env.PORT || "5000", 10);
 
